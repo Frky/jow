@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         {% load staticfiles %}
         <link href="{% static 'jow/css/style.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'jow/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
         <style>
             {% block additional_style %}
             {% endblock %}
@@ -19,6 +20,7 @@
         </section>
 
         <footer>
+            <div id="to-home"><a href="{% url 'index' %}"><span class="glyphicon glyphicon-home"></span></a></div>
             {% block footer %}
             {% endblock %}
         </footer>
