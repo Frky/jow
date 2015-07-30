@@ -55,3 +55,15 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# VIM tmp files
+*.swp
+
+# Mac OS files
+.DS_Store
+
+# Local settings
+jow/settings/local.py
+
+# DB 
+jow/db/jow.sqlite3

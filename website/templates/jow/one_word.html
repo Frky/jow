@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block additional_style %}
+    body {
+        background-color: {{ word.bg_color }};
+        color: {{ word.fg_color }};
+    }
+{% endblock %}
+
+{% block content %}
+    <div id="word">{{ word.word }}</div>
+{% endblock %}
+
+{% block footer %}
+    {{ word.footer }}
+{% endblock %}

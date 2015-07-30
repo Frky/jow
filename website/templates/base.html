@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+
+    <head>
+        <title>Just one word</title>
+        <meta charset="UTF-8">
+        {% load staticfiles %}
+        <link href="{% static 'jow/css/style.css' %}" rel="stylesheet" type="text/css">
+        <style>
+            {% block additional_style %}
+            {% endblock %}
+        </style>
+    </head>
+
+    <body>
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+
+        <footer>
+            {% block footer %}
+            {% endblock %}
+        </footer>
+    </body>
+
+</html>
