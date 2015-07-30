@@ -1,10 +1,23 @@
 {% extends "base.html" %}
 
+{% block additional_style %}
+    body {
+        color: #c0392b;
+        background-color: #e74c3c;
+        border-color: #c0392b;
+    }
+
+    input {
+        border-color: #c0392b;
+        background-color: #e74c3c;
+    }
+{% endblock %}
+
 {% block content %}
     <h1>Just one word</h1>
     <form method="post" action="{% url 'index' %}" id="one-word-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Go">
+        <input type="submit" value="GO">
     </form>
 {% endblock %}

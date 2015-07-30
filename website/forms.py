@@ -9,6 +9,8 @@ class OneWordForm(forms.ModelForm):
         widgets = {
                         'word': forms.TextInput(attrs={'placeholder': "Word you want to scream"}),
                         'footer': forms.TextInput(attrs={'placeholder': "Additional text"}),
+                        'fg_color': forms.TextInput(attrs={'class': 'color'}),
+                        'bg_color': forms.TextInput(attrs={'class': 'color'}),
             }
         labels = {
                         'footer': "More words",

@@ -21,8 +21,9 @@ section {
     padding-top: 70px;
 }
 
-h1 {
+section > h1 {
     font-size: 5em;
+    text-transform: uppercase;
 }
 
 #one-word-form > p {
@@ -37,9 +38,9 @@ h1 {
     width: 40%;
     text-align: right;
     border-style: solid;
-    border-color: black;
     border-width: 0px 0px 0px 0px;
     padding: 10px;
+    text-transform: uppercase;
 }
 
 #one-word-form > p > input {
@@ -47,7 +48,6 @@ h1 {
     width: 30%;
     text-align: left;
     border-style: solid;
-    border-color: black;
     border-width: 0px 0px 1px 0px;
     outline: none;
     margin: 10px;
@@ -58,12 +58,11 @@ h1 {
 #one-word-form > input[type=submit] {
     margin-top: 20px;
     width: 50%;
-    height: 30px;
+    height: 40px;
     border-style: solid;
-    border-color: black;
     border-width: 1px;
+    border-radius: 3px;
     outline: none;
-    background-color: white;
 }
 
 #one-word-form > input[type=submit]:hover {

@@ -5,12 +5,15 @@
         <title>Just one word</title>
         <meta charset="UTF-8">
         {% load staticfiles %}
+        <link href="{% static 'jow/css/lib/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'jow/css/lib/colpick.css' %}" rel="stylesheet" type="text/css">
         <link href="{% static 'jow/css/style.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static 'jow/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
         <style>
             {% block additional_style %}
             {% endblock %}
         </style>
+        <script src="{% static 'jow/js/lib/jquery.min.js' %}"></script>
+        <script src="{% static 'jow/js/lib/colpick.js' %}"></script>
     </head>
 
     <body>
@@ -26,4 +29,32 @@
         </footer>
     </body>
 
+    <script>
+        $(document).ready(function() {
+            $("#id_fg_color").colpick({
+                layout:'hex',
+                submit:0,
+                colorScheme:'white',
+                color: $("#id_fg_color").val(),
+                onChange:function(hsb,hex,rgb,el,bySetColor) {
+                    $("body").css('color','#'+hex);
+                    $("input").css('border-color','#'+hex);
+                    // Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
+                    if(!bySetColor) $(el).val("#" + hex);
+                }
+            });
+            $("#id_bg_color").colpick({
+                layout:'hex',
+                submit:0,
+                colorScheme:'white',
+                color: $("#id_bg_color").val(),
+                onChange:function(hsb,hex,rgb,el,bySetColor) {
+                    $("body").css('background-color','#'+hex);
+                    $("input").css('background-color','#'+hex);
+                    // Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
+                    if(!bySetColor) $(el).val("#" + hex);
+                }
+            });
+        });
+    </script>
 </html>
