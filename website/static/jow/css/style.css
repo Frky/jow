@@ -60,7 +60,6 @@ section > h1 {
     outline: none;
     margin: 10px;
     padding: 5px;
-    color: black;
 }
 
 #one-word-form > input[type=submit] {
@@ -74,8 +73,6 @@ section > h1 {
 }
 
 #one-word-form > input[type=submit]:hover {
-    background-color: black;
-    color: white;
     cursor: pointer;
 }
 

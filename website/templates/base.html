@@ -38,7 +38,16 @@
                 color: $("#id_fg_color").val(),
                 onChange:function(hsb,hex,rgb,el,bySetColor) {
                     $("body").css('color','#'+hex);
+                    $("a").css('color','#'+hex);
+                    $("input[type=submit]").hover(
+                        function() {
+                            $(this).css('background-color','#'+hex);
+                        }, 
+                        function() {
+                            $(this).css('background-color','rgba(0,0,0,0)');
+                    });
                     $("input").css('border-color','#'+hex);
+                    $("input").css('color','#'+hex);
                     // Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
                     if(!bySetColor) $(el).val("#" + hex);
                 }
@@ -51,6 +60,15 @@
                 onChange:function(hsb,hex,rgb,el,bySetColor) {
                     $("body").css('background-color','#'+hex);
                     $("input").css('background-color','#'+hex);
+                    $("input[type=submit]").hover(
+                        function() {
+                            $(this).css('color','#'+hex);
+                            $(this).css('background-color', $("#id_fg_color").val());
+                        }, function() {
+                            $(this).css('color', $("#id_fg_color").val());
+                            $(this).css('background-color','rgba(0,0,0,0)');
+                        }
+                    );
                     // Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
                     if(!bySetColor) $(el).val("#" + hex);
                 }
