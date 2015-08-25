@@ -8,6 +8,7 @@ def index(request):
     ctxt = dict()
     one_word_form = OneWordForm(request.POST or None, label_suffix="")
     ctxt['form'] = one_word_form
+    ctxt['nb_jow'] = OneWord.objects.count()
     if one_word_form.is_valid():
         one_word = one_word_form.save()
         return redirect("one_word", oid=one_word.id)
