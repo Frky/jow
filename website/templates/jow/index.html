@@ -2,22 +2,22 @@
 
 {% block additional_style %}
     body {
-        color: #c0392b;
-        background-color: #e74c3c;
-        border-color: #c0392b;
+        color: {{ fgcolor }}; // #c0392b;
+        background-color: {{ bgcolor }}; //#e74c3c;
+        border-color: {{ fgcolor }}; //#c0392b;
     }
 
     input {
-        border-color: #c0392b;
+        border-color: {{ fgcolor }}; //#c0392b;
         background-color: rgba(0,0,0,0);
     }
 
     a, a:hover {
-        color: #c0392b;
+        color: {{ fgcolor }};
     }
     input[type=submit]:hover {
-        color: #e74c3c;
-        background-color: #c0392b;
+        color: {{ bgcolor }};
+        background-color: {{ fgcolor }}; // #c0392b;
     }
 {% endblock %}
 
