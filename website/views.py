@@ -22,7 +22,7 @@ def index(request):
     while ctxt['bgcolor'] == ctxt['fgcolor']:
         ctxt['bgcolor'] = choice(colors)
     one_word_form = OneWordForm(
-                                    request.POST or None, 
+                                    request.POST or request.GET or None, 
                                     label_suffix="", 
                                     initial={"bg_color": ctxt["bgcolor"], "fg_color": ctxt["fgcolor"]}
                                 )
